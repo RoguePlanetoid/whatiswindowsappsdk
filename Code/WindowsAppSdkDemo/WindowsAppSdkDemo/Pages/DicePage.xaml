@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="WindowsAppSdkDemo.Pages.DicePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WindowsAppSdkDemo.Enums"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:comentsys="using:Comentsys.Toolkit.WindowsAppSdk"
+    xmlns:ui="using:CommunityToolkit.WinUI.UI"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="75*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Dice" Style="{StaticResource SubheaderTextBlockStyle}"/>
+        <StackPanel Grid.Row="1" Orientation="Vertical">
+            <TextBlock Text="Comentsys.ToolKit.WindowsAppSdk.Dice" Style="{StaticResource SubtitleTextBlockStyle}"/>
+            <ComboBox Name="DiceValue" ItemsSource="{ui:EnumValues Type=local:DiceValue}" 
+           SelectedIndex="0" SelectionChanged="Dice_SelectionChanged"/>
+            <comentsys:Dice Name="Dice" Width="400" Background="{StaticResource AccentFillColorDefaultBrush}" 
+            Foreground="White" CornerRadius="10"/>
+        </StackPanel>
+    </Grid>
+</Page>
