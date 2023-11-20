@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="WindowsAppSdkDemo.Pages.AssetPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WindowsAppSdkDemo.Enums"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="using:CommunityToolkit.WinUI.UI"
+    xmlns:flags="using:Comentsys.Assets.Flags"
+    xmlns:games="using:Comentsys.Assets.Games"
+    xmlns:emoji="using:Comentsys.Assets.FluentEmoji"
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="75*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Assets" Style="{StaticResource SubheaderTextBlockStyle}"/>
+        <controls:WrapPanel Grid.Row="1"  VerticalSpacing="10" HorizontalSpacing="10" >
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Comentsys.Assets.FluentEmoji" Style="{StaticResource SubtitleTextBlockStyle}"/>
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox Name="FluentEmojiType" ItemsSource="{ui:EnumValues Type=emoji:FluentEmojiType}" 
+                 SelectedIndex="0" SelectionChanged="Emoji_SelectionChanged"/>
+                    <ComboBox Name="FluentEmojiSet" ItemsSource="{ui:EnumValues Type=local:FluentEmojiSet}" 
+                 SelectedIndex="0" SelectionChanged="Emoji_SelectionChanged"/>
+                </StackPanel>
+                <Image Name="EmojiImage" Width="400"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Comentsys.Assets.Flags" Style="{StaticResource SubtitleTextBlockStyle}"/>
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox Name="FlagType" ItemsSource="{ui:EnumValues Type=flags:FlagType}" 
+                 SelectedIndex="0" SelectionChanged="Flag_SelectionChanged"/>
+                    <ComboBox Name="FlagSet" ItemsSource="{ui:EnumValues Type=flags:FlagSet}" 
+                 SelectedIndex="0" SelectionChanged="Flag_SelectionChanged"/>
+                </StackPanel>
+                <Image Name="FlagImage" Width="400"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Comentsys.Assets.Games.Chess" Style="{StaticResource SubtitleTextBlockStyle}"/>
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox Name="ChessPieceType" ItemsSource="{ui:EnumValues Type=games:ChessPieceType}" 
+                 SelectedIndex="0" SelectionChanged="Chess_SelectionChanged"/>
+                    <ComboBox Name="ChessPieceSet" ItemsSource="{ui:EnumValues Type=games:ChessPieceSet}" 
+                 SelectedIndex="0" SelectionChanged="Chess_SelectionChanged"/>
+                </StackPanel>
+                <Image Name="ChessImage" Width="400"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="Comentsys.Assets.Games.Mahjong" Style="{StaticResource SubtitleTextBlockStyle}"/>
+                <StackPanel Orientation="Horizontal">
+                    <ComboBox Name="MahjongTileType" ItemsSource="{ui:EnumValues Type=games:MahjongTileType}" 
+                 SelectedIndex="0" SelectionChanged="Mahjong_SelectionChanged"/>
+                </StackPanel>
+                <Image Name="MahjongImage" Width="400"/>
+            </StackPanel>
+        </controls:WrapPanel>
+    </Grid>
+</Page>
